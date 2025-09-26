@@ -1,0 +1,12 @@
+sentencepiece
+flask
+torch
+transformers
+soundfile
+scipy
+numpy
+psutil
+pydub
+gtts
+TTS
+librosa
