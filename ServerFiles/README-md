@@ -1,0 +1,19 @@
+---
+title: Voice AI Assistant
+emoji: 🎙️
+colorFrom: blue
+colorTo: purple
+sdk: gradio
+sdk_version: 5.47.2
+app_file: app.py
+pinned: false
+---
+
+# Voice AI Assistant
+
+Real-time voice conversation AI optimized for Hugging Face Spaces.
+
+## API Endpoints
+- `POST /process_audio` - Send WAV audio, get WAV response
+- `GET /health` - System status
+- `GET /status` - Quick ready check
