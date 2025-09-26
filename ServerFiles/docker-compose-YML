@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  voice-ai-assistant:
+    build: .
+    ports:
+      - "7860:7860"
+    environment:
+      - PORT=7860
+      - FLASK_ENV=production
+      - HF_TOKEN=${HF_TOKEN}
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./cache:/tmp/huggingface_cache
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7860/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 2m
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl 
+    depends_on:
+      - voice-ai-assistant
+    restart: unless-stopped
+
+volumes:
+  cache:
+    driver: local
