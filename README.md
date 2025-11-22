@@ -76,3 +76,14 @@ The AI magic happens on a free HuggingFace Space.
 * The ESP32 downloads the audio to the LittleFS and **automatically plays** the answer on the speaker.
 
 Enjoy building your AI Assistant! See you in the next episode!
+
+## Games
+Maze Escape: https://play.google.com/store/apps/details?id=com.DsnMechanics.MazeEscape
+
+Air Hockey: https://play.google.com/store/apps/details?id=com.DsnMechanics.AirHockey
+
+Click Challenge: https://play.google.com/store/apps/details?id=com.DsNMechanics.ClickChallenge
+
+Flying Triangels: https://play.google.com/store/apps/details?id=com.DsnMechanics.Triangle
+
+SkyScrapper : https://play.google.com/store/apps/details?id=com.DsnMechanics.SkyScraper
